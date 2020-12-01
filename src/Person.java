@@ -21,7 +21,7 @@ public class Person {
 
     public Person() {
         this.name = "";
-        this.birthday = null;
+        this.birthday = LocalDate.now();
         this.gender = null;
         this.emailAddress = "";
     }
