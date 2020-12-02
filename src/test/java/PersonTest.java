@@ -26,16 +26,22 @@ public class PersonTest {
         LocalDate expectedBirthDate = LocalDate.now();
         Person.Sex expectedSex = Person.Sex.MALE;
         String expectedEmailAddress = "pk@aol.com";
+
         //when
         Person person = new Person(expectedName, expectedBirthDate, expectedSex, expectedEmailAddress);
+
         person.setName(expectedName);
         String actualName = person.getName();
+
         person.setBirthday(expectedBirthDate);
         LocalDate actualBirthDate = person.getBirthday();
+
         person.setGender(expectedSex);
         Person.Sex actualSex = person.getGender();
+
         person.setEmailAddress(expectedEmailAddress);
         String actualEmailAddress = person.getEmailAddress();
+
         //then
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedBirthDate, actualBirthDate);
@@ -52,4 +58,30 @@ public class PersonTest {
         Assert.assertNotNull(person);
     }
 
+    @Test
+    public void printPersonTest(){
+        //given
+        Person amanda = new Person("Amanda", LocalDate.of(1988, 12, 19), Person.Sex.FEMALE, "coolgirl@gmail.com");
+        String expectedPerson = "java.Person{" +
+                "name='Amanda" + '\'' +
+                ", birthday=1988-12-19" +
+                ", gender=FEMALE"+
+                ", emailAddress='coolgirl@gmail.com" + '\'' +
+                '}'
+                ;
+        //when
+        String actualPerson = amanda.toString();
+        //then
+        Assert.assertEquals(expectedPerson, actualPerson);
+
+    }
+
+    @Test
+    public void getAgeTest(){
+        //given
+        Person person = new Person();
+
+        //when
+        //then
+    }
 }
