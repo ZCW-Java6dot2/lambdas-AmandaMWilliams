@@ -11,16 +11,16 @@ public class PersonTest {
     private Person person2;
 
     @Before
-    public void setup(){
+    public void setup() {
         List<Person> people = new ArrayList<>();
         Person person1 = new Person("Amanda", LocalDate.of(1988, 12, 19), Person.Sex.FEMALE, "coolgirl@gmail.com");
-        Person person2 = new Person("Hillary", LocalDate.of(1990, 01,01), Person.Sex.FEMALE, "skillary1@gmail.com");
+        Person person2 = new Person("Hillary", LocalDate.of(1990, 01, 01), Person.Sex.FEMALE, "skillary1@gmail.com");
         people.add(person1);
         people.add(person2);
     }
 
     @Test
-    public void personConstructorTest(){
+    public void personConstructorTest() {
         //given
         String expectedName = "Pete";
         LocalDate expectedBirthDate = LocalDate.now();
@@ -50,7 +50,7 @@ public class PersonTest {
     }
 
     @Test
-    public void nullaryConstructorTest(){
+    public void nullaryConstructorTest() {
         //given
         //when
         Person person = new Person();
@@ -59,16 +59,15 @@ public class PersonTest {
     }
 
     @Test
-    public void printPersonTest(){
+    public void printPersonTest() {
         //given
         Person amanda = new Person("Amanda", LocalDate.of(1988, 12, 19), Person.Sex.FEMALE, "coolgirl@gmail.com");
         String expectedPerson = "java.Person{" +
                 "name='Amanda" + '\'' +
                 ", birthday=1988-12-19" +
-                ", gender=FEMALE"+
+                ", gender=FEMALE" +
                 ", emailAddress='coolgirl@gmail.com" + '\'' +
-                '}'
-                ;
+                '}';
         //when
         String actualPerson = amanda.toString();
         //then
@@ -77,11 +76,13 @@ public class PersonTest {
     }
 
     @Test
-    public void getAgeTest(){
+    public void getAgeTest() {
         //given
-        Person person = new Person();
-
+        Person hillary = new Person("Hillary", LocalDate.of(1990, 01, 01), Person.Sex.FEMALE, "skillary1@gmail.com");
+        int expectedAge = 30;
         //when
+        int actualAge = hillary.getAge();
         //then
+        Assert.assertEquals(expectedAge, actualAge);
     }
 }
