@@ -1,3 +1,5 @@
+package java;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -36,7 +38,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "java.Person{" +
                 "name='" + name + '\'' +
                 ", birthday=" + birthday +
                 ", gender=" + gender +
