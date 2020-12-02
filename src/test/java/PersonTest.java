@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonTest {
+    private Person person1;
+    private Person person2;
 
     @Before
     public void setup(){
@@ -40,4 +42,14 @@ public class PersonTest {
         Assert.assertEquals(expectedSex, actualSex);
         Assert.assertEquals(expectedEmailAddress, actualEmailAddress);
     }
+
+    @Test
+    public void nullaryConstructorTest(){
+        //given
+        //when
+        Person person = new Person();
+        //then
+        Assert.assertNotNull(person);
+    }
+
 }
