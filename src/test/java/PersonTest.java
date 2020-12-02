@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonTest {
-    private Person person1;
-    private Person person2;
 
     @Before
     public void setup() {
@@ -59,7 +57,7 @@ public class PersonTest {
     }
 
     @Test
-    public void printPersonTest() {
+    public void toStringTest() {
         //given
         Person amanda = new Person("Amanda", LocalDate.of(1988, 12, 19), Person.Sex.FEMALE, "coolgirl@gmail.com");
         String expectedPerson = "java.Person{" +
@@ -84,5 +82,15 @@ public class PersonTest {
         int actualAge = hillary.getAge();
         //then
         Assert.assertEquals(expectedAge, actualAge);
+    }
+
+    @Test
+    public void printPersonTest(){
+        //given
+        Person kyle = new Person();
+        //when
+        kyle.printPerson();
+        //then
+        Assert.assertNotNull(kyle);
     }
 }
