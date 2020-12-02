@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonTest {
+    private List<Person> people;
 
     @Before
     public void setup() {
@@ -92,5 +93,22 @@ public class PersonTest {
         kyle.printPerson();
         //then
         Assert.assertNotNull(kyle);
+    }
+
+    @Test
+    public void PrintPersonOlderThanTest(){
+        //given
+        people = new ArrayList<>();
+        Person person1 = new Person("Amanda", LocalDate.of(1948, 12, 19), Person.Sex.FEMALE, "coolgirl@gmail.com");
+        people.add(person1);
+        //when
+        Person.printPersonsOlderThan(people, 50);
+        //then
+
+    }
+    @Test
+    public void printPersonsWithinAgeRangeTest(){
+
+        Person.printPersonsWithinAgeRange(people, 30,50);
     }
 }
